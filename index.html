@@ -52,7 +52,9 @@
 
   divs.forEach(div => div.addEventListener('click', logText, {
     // capture is going to reverse the bubbling so it will run capture down (body>div1>div2 etc) rather than bubbling up (div2>div1>body)
-    capture: false
+    capture: false,
+    // once will listen for the click and then unbind itself, removing the eventlistener
+    once: true
   }));
 
 </script>
