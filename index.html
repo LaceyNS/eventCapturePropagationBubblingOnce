@@ -42,6 +42,16 @@
 
 <button></button>
 <script>
+  const divs = document.querySelectorAll('div');
+
+  function logText(e) {
+    console.log(this.classList.value);
+  }
+
+  divs.forEach(div => div.addEventListener('click', logText, {
+    // capture is going to reverse the bubbling so it will run capture down (body>div1>div2 etc) rather than bubbling up (div2>div1>body)
+    capture: true
+  }));
 
 </script>
 </body>
